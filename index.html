@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARA BookShelf Library</title>
+    <link href="/images/logo.png" rel="shorcut icon">
+    <!-- font awesome cdn links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+
+    <!-- start header -->
+
+    <header class="header">
+        <a href="#home" class="logo">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#book-post">My Books List</a>
+            <a href="#add-books">Add Books</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+
+    <!-- end header -->
+
+    <!-- start main -->
+    <main>
+        <!-- start article main -->
+        <article class="home" id="home">
+            <div class="content">
+                <h1> It's time to learn </h1>
+                <h3> Learning will make you rich in knowledge </h3>
+                <a href="#book-post" class="btn"> Come on, let's read the book now! </a>
+            </div>
+        </article>
+        <!-- end article main -->
+
+        <!-- start article my bookslist -->
+        <h1 class="heading"><span> My Books </span> List </h1>
+        <article class="book-post" id="book-post">
+            <div class="post">
+                <img src="/images/book1.jpg" alt="book1" class="post-img">
+                <div class="post-content">
+                    <h3>Cantik Itu Luka</h3>
+                    <p>Novel ini menceritakan tentang masa kolonial atau penjajahan, saat seorang perempuan dipaksa
+                        untuk menjual diri. Perempuan tersebut memiliki 3 anak cantik, dan ia berharap anak yang
+                        terakhir memiliki wajah yang buruk rupa. Akhirnya anak terakhir lahir seperti yang ia harapkan,
+                        dan diberikan nama Cantik.</p>
+                    <span class="author">Eka Kurniawan</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <img src="/images/book2.jpg" alt="book2" class="post-img">
+                <div class="post-content">
+                    <h3>Laut Bercerita</h3>
+                    <p>Laut Bercerita, novel terbaru Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan,
+                        sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan
+                        lancar berkhianat, sejumlah keluarga yang mencari kejelasan makam anaknya, dan tentang cinta
+                        yang tak akan luntur.
+                    </p>
+                    <span class="author">Leila S. Chudori</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <img src="/images/book3.jpg" alt="book3" class="post-img">
+                <div class="post-content">
+                    <h3>Ronggeng Dukuh Paruk</h3>
+                    <p>Novel ini bercerita tentang perjalan hidup tokoh Srintil yang terpilih menjadi seorang penari
+                        ronggeng di kampungnya dan bagaimana keadaan itu mengubah jalan hidupnya dan juga kekasihnya.
+                        Dalam buku surat buat emak di tulis perjalanan hidup tokoh Rasus yang mencari gambaran emaknya
+                        dalam diri srintil.
+                    </p>
+                    <span class="author"> Ahmad Tohari</span>
+                </div>
+            </div>
+        </article>
+        <!-- end article my bookslist -->
+
+        <!-- start article add books -->
+        <h1 class="heading" id="add-books"><span> Add </span> Books </h1>
+        <article class="input-books">
+            <h1>Input New Books</h1>
+            <form id="inputBook">
+                <div class="input">
+                    <label for="inputBookTitle">Title</label>
+                    <input id="title" type="text" required>
+                </div>
+                <div class="input">
+                    <label for="inputBookAuthor">Author</label>
+                    <input id="author" type="text" required>
+                </div>
+                <div class="input">
+                    <label for="inputBookYear">Year</label>
+                    <input id="year" type="number" required>
+                </div>
+                <div class="input_inline">
+                    <label for="inputBookIsComplete">
+                        Mark as done</label>
+                    <input id="inputBookIsComplete" type="checkbox">
+                </div>
+                <button type="submit"> Put the Book on the shelf <span>Unfinished
+                        reading</span></button>
+            </form>
+        </article>
+
+        <article class="search_section">
+            <h1>
+                Search Books (Optional)</h1>
+            <form id="searchBook" onsubmit="return false">
+                <label for="searchBookTitle">
+                    <Title></Title>
+                </label>
+                <input id="searchBookTitle" type="text" placeholder="Search...">
+                <button id="searchSubmit" onclick="search()">Search</button>
+            </form>
+        </article>
+
+        <article class="book_shelf">
+            <h2>
+                Not finished reading</h2>
+
+            <div id="incompleteBookshelfList" class="book_list">
+            </div>
+        </article>
+
+        <article class="book_shelf">
+            <h2>finished reading</h2>
+
+            <div id="completeBookshelfList" class="book_list">
+            </div>
+        </article>
+        <!-- end article add books -->
+    </main>
+    <!-- end main -->
+
+    <!-- start footer -->
+    <footer class="footer">
+        <div class="locate">
+            <div class="lines"> <a
+                    href="https://www.google.com/maps/place/6%C2%B034'02.7%22S+106%C2%B047'17.6%22E/@-6.5680169,106.7885313,17z/data=!4m6!3m5!1s0x0:0xf620a0ae574fcdd8!7e2!8m2!3d-6.5674041!4d106.7882313"
+                    target="_blank"><i><img src="/images/ft_locate.png" class="icons-ft" /></i><span class="url"> Jl.
+                        Cimanggu Gg. Mesjid
+                        No.41 Kota Bogor, 16164</span></a>
+            </div>
+            <div class="lines"> <a href="mailto:abdul.tamsis@gmail.com"><i><img src="/images/ft_mail.png"
+                            class="icons-ft" /></i><span class="url"> abdul.tamsis@gmail.com</span></a>
+            </div>
+            <div class="lines"> <a href="tel:+628988416727"><i><img src="/images/ft_call.png"
+                            class="icons-ft" /></i><span style="margin-top:-10px;" class="url"> 08988416727</span></a>
+            </div>
+            <div class="lines"> <a
+                    href="https://api.whatsapp.com/send?phone=628988416727&text=Halo%20Admin!%0ASaya%20ingin%20order%20jasa%20Anda"
+                    target="_blank"><i><img src="/images/icon5-wa.png" class="icons-ft" /></i><span
+                        style="margin-top:-10px;" class="url"> 08988416727</span></a>
+            </div>
+            <div class="credit">
+                <p>© 2022 ARA BookShelf Library. All rights reserved | Design by Abdul Rahman Alhafizh </p>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- custom js -->
+    <script src="/assets/script.js"> </script>
+</body>
+
+</html>
